@@ -1,0 +1,13 @@
+dagster
+dagster-cloud
+dagster-dbt
+dbt-core>=1.4.0
+dbt-duckdb
+dbt-sqlserver
+pandas
+duckdb
+dagstermill
+plotly-express
+
+[dev]
+dagster-webserver

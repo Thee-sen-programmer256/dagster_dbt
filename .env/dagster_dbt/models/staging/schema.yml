@@ -1,0 +1,14 @@
+
+version: 2
+sources:
+  - name: dagster_dbt
+    database: ENGINEERING  
+    schema: dbo  
+    tables:
+      - name: ACCOUNTS
+      - name: TRANSACTIONS
+
+models:
+  - name: STG_TRANSACTIONS
+    description: "Join Accounts to Transactions"
+    

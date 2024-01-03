@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: PROD_TRANSACTIONS
+    description: "Transform on accounts and transactions"
+    config:
+      meta:
+        dagster:
+          group: PRODUCTION
+    

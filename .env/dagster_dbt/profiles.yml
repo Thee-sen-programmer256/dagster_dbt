@@ -1,0 +1,13 @@
+dagster_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: sqlserver
+      driver: 'ODBC Driver 17 for SQL Server' # (The ODBC Driver installed on your system)
+      server: localhost
+      port: 1433
+      database: ENGINEERING 
+      schema: dbo
+      user: sa
+      password: K@roukazeno1
+      trust_cert: True

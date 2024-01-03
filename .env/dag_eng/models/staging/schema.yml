@@ -1,0 +1,23 @@
+version: 2
+sources:
+  - name: dagster
+    tables:
+      - name: CUSTOMERS
+        meta:
+          dagster:
+             asset_key: ["CUSTOMERS"]
+
+
+models:
+  - name: STG_TRANSACTIONS
+    description: "Transform on accounts and transactions"
+    config:
+      meta:
+        dagster:
+          group: TRANSFORMATION
+  - name: STG_DIMACCOUNTS
+    config:
+      meta:
+        dagster:
+          group: TRANSFORMATION
+    
