@@ -1,0 +1,22 @@
+name: CI # This is the name of the action
+
+  on:
+    push: 
+      branches: [ data ]
+    pull-request: 
+      branches: [ data ]
+    workflow_dispatch:
+
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+
+      steps:
+        - uses: actions/checkout@v2
+
+        - name: Run a one-line script 
+          run: echo This repo has been pulled or pushed 
+
+        - name: Run a multi-line script
+          run: echo new push or pull added 
+    
