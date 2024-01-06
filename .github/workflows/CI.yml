@@ -1,4 +1,4 @@
-name: CI # This is the name of the action
+name: CI
 
   on:
     push: 
