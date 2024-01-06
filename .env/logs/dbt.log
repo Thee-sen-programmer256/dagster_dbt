@@ -105,3 +105,90 @@ Runtime Error
 [0m12:49:00.241805 [debug] [MainThread]: Command `dbt run` failed at 12:49:00.241568 after 0.05 seconds
 [0m12:49:00.242459 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1050d7e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10034ead0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1050e8890>]}
 [0m12:49:00.243125 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2024-01-06 11:33:23.752118 | 055ae6d3-30e7-440c-ab95-170e09bc20b6 ==============================
+[0m11:33:23.752118 [info ] [MainThread]: Running with dbt=1.4.9
+[0m11:33:23.754430 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/mac/.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'project_name': 'fin_proj', 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+[0m11:33:23.754773 [debug] [MainThread]: Tracking: tracking
+[0m11:33:23.790079 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110b28690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110b2bf50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110b288d0>]}
+[0m11:33:23.793805 [debug] [MainThread]: Starter project path: /Users/mac/Desktop/Analytics_Enginerring/dagster-dbt/.env/lib/python3.11/site-packages/dbt/include/starter_project
+[0m11:33:28.094119 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110b64d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110b74390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110b52190>]}
+[0m11:33:28.094733 [debug] [MainThread]: Flushing usage events
+[0m11:33:29.352194 [error] [MainThread]: Encountered an error:
+cannot import name 'ConstraintSupport' from 'dbt.adapters.base.impl' (/Users/mac/Desktop/Analytics_Enginerring/dagster-dbt/.env/lib/python3.11/site-packages/dbt/adapters/base/impl.py)
+[0m11:33:29.364363 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/mac/Desktop/Analytics_Enginerring/dagster-dbt/.env/lib/python3.11/site-packages/dbt/main.py", line 136, in main
+    results, succeeded = handle_and_check(args)
+                         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Analytics_Enginerring/dagster-dbt/.env/lib/python3.11/site-packages/dbt/main.py", line 206, in handle_and_check
+    task, res = run_from_args(parsed)
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Analytics_Enginerring/dagster-dbt/.env/lib/python3.11/site-packages/dbt/main.py", line 253, in run_from_args
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/mac/Desktop/Analytics_Enginerring/dagster-dbt/.env/lib/python3.11/site-packages/dbt/task/init.py", line 305, in run
+    self.create_profile_from_target(adapter, profile_name=project_name)
+  File "/Users/mac/Desktop/Analytics_Enginerring/dagster-dbt/.env/lib/python3.11/site-packages/dbt/task/init.py", line 173, in create_profile_from_target
+    load_plugin(adapter)
+  File "/Users/mac/Desktop/Analytics_Enginerring/dagster-dbt/.env/lib/python3.11/site-packages/dbt/adapters/factory.py", line 202, in load_plugin
+    return FACTORY.load_plugin(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Analytics_Enginerring/dagster-dbt/.env/lib/python3.11/site-packages/dbt/adapters/factory.py", line 57, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/mac/Desktop/Analytics_Enginerring/dagster-dbt/.env/lib/python3.11/site-packages/dbt/adapters/duckdb/__init__.py", line 4, in <module>
+    from dbt.adapters.duckdb.impl import DuckDBAdapter
+  File "/Users/mac/Desktop/Analytics_Enginerring/dagster-dbt/.env/lib/python3.11/site-packages/dbt/adapters/duckdb/impl.py", line 10, in <module>
+    from dbt.adapters.base.impl import ConstraintSupport
+ImportError: cannot import name 'ConstraintSupport' from 'dbt.adapters.base.impl' (/Users/mac/Desktop/Analytics_Enginerring/dagster-dbt/.env/lib/python3.11/site-packages/dbt/adapters/base/impl.py)
+
+[0m14:35:17.123731 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e1eb590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e209390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e209ad0>]}
+
+
+============================== 14:35:17.132090 | dcdb9dc3-f18b-4d8c-9729-4746be74ee4e ==============================
+[0m14:35:17.132090 [info ] [MainThread]: Running with dbt=1.7.4
+[0m14:35:17.133463 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/mac/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt init fin_proj', 'send_anonymous_usage_stats': 'True'}
+[0m14:35:17.135171 [info ] [MainThread]: A project called fin_proj already exists here.
+[0m14:35:17.173335 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.07708618, "process_user_time": 1.90456, "process_kernel_time": 0.202195, "process_mem_max_rss": "98258944", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m14:35:17.174295 [debug] [MainThread]: Command `dbt init` succeeded at 14:35:17.174064 after 0.08 seconds
+[0m14:35:17.175951 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e222910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e223950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cad42d0>]}
+[0m14:35:17.176667 [debug] [MainThread]: Flushing usage events
+[0m14:36:32.774127 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1092d3510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1092f1190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1092f18d0>]}
+
+
+============================== 14:36:32.782359 | 7d506f33-df2f-4567-9f93-92c1a06ccd6b ==============================
+[0m14:36:32.782359 [info ] [MainThread]: Running with dbt=1.7.4
+[0m14:36:32.783356 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/Users/mac/.dbt', 'log_path': 'logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt init fin_proj', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m14:36:32.784738 [debug] [MainThread]: Starter project path: /Users/mac/Desktop/Analytics_Enginerring/dagster-dbt/.env/lib/python3.11/site-packages/dbt/include/starter_project
+[0m14:36:32.794037 [info ] [MainThread]: 
+Your new dbt project "fin_proj" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m14:36:32.794654 [info ] [MainThread]: Setting up your profile.
+[0m14:36:36.197934 [info ] [MainThread]: Profile fin_proj written to /Users/mac/.dbt/profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+[0m14:36:36.202994 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 3.4619653, "process_user_time": 2.301051, "process_kernel_time": 0.441771, "process_mem_max_rss": "107159552", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m14:36:36.204038 [debug] [MainThread]: Command `dbt init` succeeded at 14:36:36.203793 after 3.46 seconds
+[0m14:36:36.204701 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1043e9110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109345a10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1043e9a10>]}
+[0m14:36:36.205329 [debug] [MainThread]: Flushing usage events
