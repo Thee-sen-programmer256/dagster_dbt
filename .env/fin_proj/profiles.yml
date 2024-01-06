@@ -1,0 +1,7 @@
+fin_proj:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: '/Users/mac/Desktop/Analytics_Enginerring/dagster-dbt/.env/dag_eng/engineering.duckdb'
+      threads: 24
