@@ -1,7 +1,19 @@
 fin_proj:
   target: dev
+  var_files: ['dbt_project.yml']
   outputs:
     dev:
       type: duckdb
       path: '/Users/mac/Desktop/Analytics_Enginerring/dagster-dbt/.env/dag_eng/engineering.duckdb'
       threads: 24
+
+    prod:
+      type: sqlserver
+      driver: 'ODBC Driver 17 for SQL Server'
+      server: localhost
+      port: 1433
+      database: ENGINEERING
+      schema: dbo
+      user: '{{var("username")}}'
+      password: '{{var("password")}}'
+      trust_cert: True
